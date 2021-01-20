@@ -8,6 +8,10 @@ echo deb https://deb.frrouting.org/frr buster frr-stable | sudo tee /etc/apt/sou
 sudo apt update
 sudo apt install -y frr frr-pythontools
 
+# Link new frr.conf
+sudo rm -rf /etc/frr/frr.conf
+sudo ln -s /vagrant/frr.conf /etc/frr/frr.conf
+
 # Enable FRR bgpd
 sudo sed -i "s/^bgpd=no/bgpd=yes/" /etc/frr/daemons
 sudo systemctl restart frr
