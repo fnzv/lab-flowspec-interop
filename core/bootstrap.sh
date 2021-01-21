@@ -12,6 +12,7 @@ sudo apt install -y frr frr-pythontools
 sudo rm -rf /etc/frr/frr.conf
 sudo ln -s /vagrant/frr.conf /etc/frr/frr.conf
 
-# Enable FRR bgpd
+# Enable daemons
 sudo sed -i "s/^bgpd=no/bgpd=yes/" /etc/frr/daemons
+sudo sed -i "s/^pbrd=no/pbrd=yes/" /etc/frr/daemons
 sudo systemctl reload frr
