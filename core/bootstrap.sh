@@ -14,4 +14,4 @@ sudo ln -s /vagrant/frr.conf /etc/frr/frr.conf
 
 # Enable FRR bgpd
 sudo sed -i "s/^bgpd=no/bgpd=yes/" /etc/frr/daemons
-sudo systemctl restart frr
+sudo systemctl reload frr
